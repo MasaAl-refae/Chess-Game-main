@@ -1,0 +1,181 @@
+
+body, html{
+margin: 0;
+    padding: 0;
+    background: #ddd;
+}
+
+.Board{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50% , -50%) rotate(-30deg) skew(25deg);
+    width:480px;
+    height: 480px;
+    transition: 0.5s;
+    background: #000;
+    box-shadow: -20px  20px  20px rgba(0,0,0,.5);
+    justify-content: right;
+}
+.Board:hover
+{
+    top:45%;
+    box-shadow: -50px  50px  50px rgba(0,0,0,.5);
+}
+.Board span
+{
+    width:480px;
+    height: 60px;
+    display: block;
+}
+.Board span:nth-child(odd)
+{
+    background: linear-gradient(90deg, #f1f1f1 0% , #f1f1f1 50% ,#333 50% ,#333 100% );
+    background-size:120px;
+}
+.Board span:nth-child(even)
+{
+    background: linear-gradient(90deg,#333 0% , #333 50% , #f1f1f1 50% , #f1f1f1 100% );
+    background-size:120px;
+}
+.board:before {
+    content: '';
+    position: absolute;
+    /* bottom: -20px; */
+    left: -20px;
+    top:10px;
+    height: 100%;
+    width: 20px;
+    background: linear-gradient(180deg, #fff 0%, #ffff 50%, #000 50%, #000 100%);
+    background-size: 120px;
+    transform: rotate(0deg) skewy(-45deg);
+
+}
+.Board:after
+{
+    content:'';
+    position: absolute;
+    bottom:-20px;
+    left:-10px;
+    height: 20px;
+    width:100%;
+    background: linear-gradient(90deg,#000 0% , #000 50% , #ffffff 50% , #ffffff 100% );
+    background-size: 120px;
+    transform: rotate(0deg) skewX(-45deg);
+}
+.layer
+{
+    position: absolute;
+    top : 0%;
+    left:0;
+    width:100%;
+    height: 100%;
+    background: rgba(255 ,255,255,.2);
+    box-shadow: -1px 1px 4px rgba(0,0,0,0.1);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.Board:hover .layer
+{
+    transform: translate(40px ,-40px);
+}
+.Board:before
+{
+    content: '';
+    position: absolute;
+    top:0%;
+    left:-70%;
+    width: 50%;
+    height: 100%;
+    background:rgba(255 , 255 , 255 ,.2);
+    transform:skewX(-5deg);
+    transition:0.5s;
+    filter: blur(4px);
+}
+.Board:hover  .layer:before
+{
+    left:120px;
+}
+.bg-image {
+    /* The image used */
+    background-image: url("2 queens kill e 0.png");
+
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+html, body{
+    height: 100%;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #030321;
+    font-family: Arial;
+}
+
+.container {
+    display: flex;
+    /*   border:1px solid red; */
+    height: 100%;
+    align-items: center;
+}
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 960px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+    stroke: #4D163D;
+    animation-delay: -1s;
+}
+
+.text-copy:nth-child(2){
+    stroke: #840037;
+    animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+    stroke: #BD0034;
+    animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+    stroke: #BD0034;
+    animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+    stroke: #FDB731;
+    animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+    100% {stroke-dashoffset: -35%;}
+}

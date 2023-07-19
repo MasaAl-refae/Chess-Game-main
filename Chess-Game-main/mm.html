@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game || Web Mentor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="n-qun.js"></script>
+    <script src="mmm.js"></script>
+
+</head>
+<body>
+
+
+
+
+
+<img src="logochess.png" style="height: 70px;width: 300px; position: absolute; top: 20px ; border-radius: 50px; left: 600px">
+    <h2 id ='poq1' style="color: #f83373; top: 90px ; position: absolute;left: 20px" >Select border size: </h2>
+
+    <select name="value of n" id="vn" style=" top: 190px ; position: absolute; left: 70px ;background-color: #111111 ; color: white; font-size: 20px; width: 100px; border-radius: 50px " >
+        <option value="4n">4</option>
+        <option value="5n">5</option>
+        <option value="6n">6</option>
+        <option value="7n">7</option>
+        <option value="8n">8</option>
+    </select>
+<button type="button" onclick="DESIGN()" value="Start Play"  class="glow-on-hover" style="; position: absolute; top: 230px;  left: 20px "> DESIGN </button>
+
+    <button type="button" onclick="start()" value="Start Play"  class="glow-on-hover" style="; position: absolute; top: 300px;  left: 20px "> START </button>
+
+    <!--<img src="2%20queens%20kill%20e%200.png" style="width : 1500px; height: 800px">-->
+    <button onclick="playAgain()" class="glow-on-hover" type="button" onclick="start()" value="Start Play"  class="glow-on-hover" style="; position: absolute; top: 370px; left: 20px" > RESET</button>
+<!--    <div id="game3" style=" position: relative;  ; top: 120px; "></div>-->
+    <h4 style="; position: absolute; top: 470px; color: white;left: 20px">Speed Is:</h4>
+    <input type="range" id="time" name="time" min="1" max="100" style="; position: absolute; top: 520px;left: 20px">
+    <div id="game" style=" position: relative; left: -260px ; top: 120px" ></div>
+    <div id="game2" style="position: relative; left: 720px ;top :-400px "></div>
+
+
+        <!-- row eight -->
+    <h2 id ='poq2' style="color: #f83373; top: 90px ;left:1200px; position: absolute" >Select your style: </h2>
+    <h3  style="color: white; top: 150px ;left:1200px; position: absolute" >Select border Color: </h3>
+<input type="radio" id="color1" name="color" value="1" style="left:1200px;position: absolute; top: 200px ;">
+<label for="color1">
+    <span style="width: 10px; height: 10px; background-color: #ffb946; left:1240px;position: absolute; top: 205px ;"></span>
+    <span style="width: 10px; height: 10px; background-color: #c9ff37; left:1260px;position: absolute; top: 205px ;"></span>
+    <span style="width: 10px; height: 10px; background-color: #2d969b; left:1280px;position: absolute; top: 205px ;"></span>
+</label>
+
+<br>
+<input type="radio" id="color2" name="color" value="2" style="left:1200px;position: absolute; top: 230px ;">
+
+<label for="color2"></label>
+<span style="width: 10px; height: 10px; background-color: #f8f533; left:1240px;position: absolute; top: 235px ;"></span>
+<span style="width: 10px; height: 10px; background-color: rgba(137,163,255,0.71); left:1260px;position: absolute; top: 235px ;"></span>
+<span style="width: 10px; height: 10px; background-color: #a5236e; left:1280px;position: absolute; top: 235px ;"></span>
+
+<br>
+
+    <h3  style="color: white; top: 260px ;left:1200px; position: absolute" >Select Queen Icon: </h3>
+
+<input type="radio" id="queen1" name="queen" value="1" style="left:1200px;position: absolute; top: 320px ;">
+<label for="queen1">
+    <span style=" color: #ffb946; left:1240px;position: absolute; top: 315px ;font-size: 30px"><i class="fa-solid fa-crown"></i></span>
+
+</label>
+
+<br>
+<input type="radio" id="queen2" name="queen" value="2" style="left:1200px;position: absolute; top: 365px ;">
+
+<label for="queen2"></label>
+<span style=" color: #f8f533; left:1240px;position: absolute; top: 360px ;font-size: 30px"><i class="fa-solid fa-star"></i></span>
+
+<input type="radio" id="queen3" name="queen" value="2" style="left:1200px;position: absolute; top: 410px ;">
+
+<label for="queen3"></label>
+<span style=" color: #1c7fe3; left:1245px;position: absolute; top: 405px ;font-size: 30px"><i class="fa-solid fa-ghost"></i></span>
+
+<br>
+
+
+
+<select name="value of n" id="gg" style=" top: 440px ; position: absolute; left: 70px ;background-color: #111111 ; color: white; font-size: 20px; width: 100px; border-radius: 50px " >
+    <option value="1">Tnew= α⋅(α⋅T initial) </option>
+    <option value="2">T new=α⋅T old</option>
+    <option value="3">T new= T old / 1+β⋅Told</option>
+
+
+</select>
+<label  style="left:20px;position: absolute; top:550px ; color: white"  >Inter Value of T</label>
+<input type="text" id="timp"  style="left:140px;position: absolute; top:550px ; border-radius: 50px; width: 50px" >
+
+<label  style="left:20px;position: absolute; top:600px ; color: white"  >Inter Value of I</label>
+<input type="text" id="timpmin"  style="left:140px;position: absolute; top:600px ; border-radius: 50px; width: 50px" >
+
+
+
+<input type="radio" id="hill" name="game" value="2" style="left:20px;position: absolute; top: 160px ;">
+<label for="hill"style="color: white;left:40px;position: absolute; top: 160px ;">Hill Climbing</label>
+
+<input type="radio" id="sm-an" name="game" value="2" style="left:140px;position: absolute; top: 160px ;">
+<label for="sm-an" style="color: white;left:160px;position: absolute; top: 160px ;">Simulated Annealing</label>
+<a type="button" href="chess.html" class="glow-on-hover" style="; position: absolute; top: 650px;  left: 1250px; width: 100px ">
+
+<label style="top:15px; position: absolute; left: 25px">  BACK </label>
+  </a>
+
+
+
+        </form>
+
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="mmm.js"></script>
+
+</body>
+</html>
